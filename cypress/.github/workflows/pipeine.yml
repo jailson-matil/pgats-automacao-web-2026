@@ -1,0 +1,24 @@
+name: Web E2E Tests
+on:
+    workflow_dispatch:
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Node version
+        run: node --version
+      - name: Install dependencies
+        run: npm install
+      - name: Executando os testes E2E
+        run: npx cypress run --browser chrome --headless
+      - uses: actions/upload-artifact@v3
+        if: ${{ !cancelled() }}
+        with:
+          name: relatorios
+          path: 
+            cypress/reports
+            cypress/videos
+            cypress/screenshots
+        

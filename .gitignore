@@ -1,0 +1,15 @@
+node_modules/
+logs/
+*.log
+
+# cypress
+cypress/videos/
+cypress/screenshots/
+
+# env files
+.env.production
+.env.test
+
+npm_install_debug.log
+
+.DS_Store
