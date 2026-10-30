@@ -32,7 +32,7 @@ describe('Automation Exercise',()=>{
         cadastro.deletarConta();         
     });
     
-    it.only('Caso de Teste 03: Login com email e senha incorretos', () => {
+    it('Caso de Teste 03: Login com email e senha incorretos', () => {
 
         // ACT
         cy.visit('https://www.automationexercise.com/login')
@@ -97,7 +97,7 @@ describe('Automation Exercise',()=>{
             })
     })
 
-    it.only('Caso de Teste 10: Verificar a assinatura na página inicial', () => {
+    it('Caso de Teste 10: Verificar a assinatura na página inicial', () => {
         cy.visit('https://www.automationexercise.com')
         cy.contains('Full-Fledged practice website for Automation Engineers').should('be.visible')
         cy.get('footer').scrollIntoView()
